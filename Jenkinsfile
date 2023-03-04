@@ -1,4 +1,4 @@
-pipelene {
+pipeline {
 	agent { label 'JDK17' }
 	options { 
 		timeout(time: 1, unit: 'HOURS')
@@ -15,7 +15,7 @@ pipelene {
 		}
 		stage('Buid the code') {
 			steps {
-				sh script: 'mvn clean package'
+				sh script: '/opt/apache-maven-3.8.7/bin/mvn clean package'
 			}
 		}
 		stage('Reporting and Archiving') {
